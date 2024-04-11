@@ -1,78 +1,212 @@
+html,
 body {
-    margin: auto;
-    width: 1219px 100%;
+    height: 100%;
+    background: #ffffff;
+    font-family: "Montserrat";
+    font-weight: 300;
+    color: #060606;
+    margin: 0;
+    padding: 0;
+}
+
+.main_wrapper {
+    min-height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
 }
 
 .main {
-    justify-content: center;
-    justify-items: center;
+    flex: 1 1 auto;
 }
 
+[class*="__content"] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+/* ######################################################################## */
+/* header ################################################################# */
 .header {
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
     height: 84px;
-    width:100%;
+    width: 100%;
     background: #007765;
 }
 
-.line {
-    display: inline;
-    justify-content: center;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.header__content {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }
 
 .image {
-    position: fixed;
-    justify-content: left;
-    text-align: left;
-    padding-left: 15%;
-
-}
-.header .header-line .line .v1 {
-    margin-top: 19px;
-    margin-left: 55px;
-    width: 45px;
-    height: 45px;
-}
-
-.header .header-line .line .v2 {
-    margin-top: -20px;
-    margin-left: -48px;
-    width: 180px;
-    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
 }
 
 .nav {
-    display: absolute;
-    padding-left: 70%;
+    display: flex;
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    align-items: center;
 }
 
 .nav a {
-    width: 154px;
-    height: 29px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    
+
     color: #FFFFFF;
     justify-content: right;
     text-align: right;
-} 
+}
 
+.menu__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.coin {
+    margin: 0 10px;
+}
+
+.coin::before {
+    content: '';
+    width: 1px;
+    height: 29px;
+    background: #ffffff;
+    margin: 0 15px;
+    padding: 0 1px;
+}
+
+.coin::after {
+    content: '';
+    width: 1px;
+    height: 29px;
+    background: #ffffff;
+    margin: 0 15px;
+    padding: 0 1px;
+}
+
+/* burger ##################################### */
+
+.header__burger-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: #007765;
+    position: relative;
+    display: none;
+    z-index: 6;
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #022203;
+    left: 2px;
+    transition: transform .5s, opacity .5, background-color .5s;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-15px);
+}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(15px);
+}
+
+
+.header.open .header__burger-btn span {
+    background-color: #ffffff;
+}
+
+.header.open .header__burger-btn {
+}
+
+.header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+
+    .header__burger-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+    .nav {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        left: -350px;
+        top: 0;
+        width: 300px;
+        background: #02221d;
+        padding: 80px 20px 20px 20px;
+        transition: transform .8s;
+    }
+
+    .menu__list {
+        display: block;
+    }
+
+    .menu__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .header.open .nav {
+        transform: translateX(100%);
+    }
+}
+
+/* ###################################################################### */
+/* title ################################################################ */
 .title {
-background: url(picture/image1.png);
+    background-image: url(picture/image1.png);
 }
 
 .title .here {
     text-align: center;
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding: 160px 0;
     font-size: larger;
     font-weight: 900;
     color: #FFFFFF;
@@ -96,16 +230,13 @@ p {
     color: #000000;
 }
 
-.mean {
-    margin: auto;
-    padding-right: 15%;
-    padding-left: 15%;
+/* ###################################################################### */
+/* mean and citate ###################################################### */
+.mean__content {
+    display: flex;
     justify-content: center;
     text-align: justify;
-}
-
-.text {
-    justify-content: center; 
+    flex-direction: column;
 }
 
 .citate {
@@ -113,42 +244,37 @@ p {
 }
 
 .pcitate {
-padding-top: 128px;
-padding-bottom: 127px;
-padding-left: 163px;
-padding-right: 163px;
-
-font-family: 'Roboto';
-font-style: italic;
-font-weight: 500;
-font-size: 48px;
-line-height: 56px;
-text-align: center;
-color: #FFFFFF;
+    padding: 128px 0;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 .textlogo {
     display: inline-flex;
 }
+
 .logomeantwo {
-    padding-right: 48px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 24px;
     width: 115px;
     height: 115px;
 }
 
+/* ###################################################################### */
+/* team ################################################################# */
 .team {
     justify-content: center;
     text-align: center;
-    width: 1119px;
-    margin: auto;
-
 }
 
-.team .elem {
-    display:inline-block;
-    margin: 50px 50px 50px 50px;
+.elem {
+    display: inline-block;
+    margin: 30px;
+    width: 283px;
 }
 
 .teamphoto {
@@ -156,10 +282,10 @@ color: #FFFFFF;
     height: 168px;
 }
 
-.flname  {
+.flname {
     font-weight: 700;
     font-size: 24px;
-    color:#007765;
+    color: #007765;
 }
 
 .worker {
@@ -171,24 +297,47 @@ color: #FFFFFF;
     text-align: center;
     color: #000000;
 }
+
+/* ###################################################################### */
+/* footer ############################################################### */
 .footer {
     background: #333333;
-    justify-content: center;
-    visibility: inherit;
+    height: 176px;
+    width: 100%;
+}
+
+.footer__content {
+    max-width: 1200px;
+    height: 100%;
 }
 
 .par-footer {
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+    padding: 50px 0 0 60px;
     text-align: center;
-    padding-top: 48px;
-    padding-bottom: 64px;
-    padding-left: 140px;
-    padding-right: 139px;
-    margin: auto;
 }
 
+/* ###################################################################### */
+/* media ############################################################### */
+@media (max-width: 992px) {
+    .slyleh {
+        font-size: 44px;
+    }
+    p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        color: #000000;
+    }
+    .pcitate {
+        font-size: 38px;
+        line-height: 46px;
+        padding: 60px 15px;
+    }
+}
