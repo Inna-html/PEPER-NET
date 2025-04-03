@@ -1,12 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html,
 body {
     height: 100%;
     background: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     color: #060606;
-    margin: 0;
-    padding: 0;
+}
+
+[class*="__content"] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
 }
 
 .main_wrapper {
@@ -20,16 +29,13 @@ body {
 
 .main {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-[class*="__content"] {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 15px;
-}
-
-/* ######################################################################## */
-/* header ################################################################# */
+/* ############################################################# */
+/* header ###################################################### */
 .header {
     position: fixed;
     top: 0;
@@ -146,9 +152,6 @@ body {
     background-color: #ffffff;
 }
 
-.header.open .header__burger-btn {
-}
-
 .header.open .header__burger-btn span:nth-child(1) {
     transform: translateY(0) rotate(45deg);
 }
@@ -173,10 +176,11 @@ body {
         position: absolute;
         display: flex;
         justify-content: center;
-        left: -350px;
+        left: -450px;
         top: 0;
-        width: 300px;
-        background: #02221d;
+        width: 400px;
+        height: 400px;
+        background: #02221df0;
         padding: 80px 20px 20px 20px;
         transition: transform .8s;
     }
@@ -199,18 +203,24 @@ body {
 }
 
 
-/* ###################################################################### */
-/* title ################################################################ */
+/* ###################################################### */
+/* title ################################################ */
 .title {
-    background-image: url('./picture/image1.png');
+    background-image: url('./picture/main.png');
+    background-size: cover;
     width: 100%;
+    height: 403px;
+    margin-top: 84px;
 }
 
 .title .here {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     text-align: center;
-    padding: 160px 0;
-    font-size: larger;
-    font-weight: 900;
+    font-size: 48px;
+    line-height: 83px;
     color: #FFFFFF;
 }
 
@@ -222,27 +232,36 @@ body {
     text-align: center;
     margin-bottom: 0px;
     color: #007765;
+    margin: 0px;
 }
 
-p {
+.text p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
+    margin: 20px 0px;
     color: #000000;
 }
 
 /* ###################################################################### */
 /* mean and citate ###################################################### */
+
+.marginTop {
+    padding-top: 80px;
+}
+
 .mean__content {
     display: flex;
     justify-content: center;
     text-align: justify;
     flex-direction: column;
+    margin-bottom: 92px;
 }
 
 .citate {
-    background-image: url('./picture/image2.png');
+    background-image: url('./picture/citate.png');
+    background-size: cover;
     width: 100%;
 }
 
@@ -327,6 +346,8 @@ p {
 
 /* ###################################################################### */
 /* media ############################################################### */
+
+
 @media (max-width: 992px) {
     .slyleh {
         font-size: 44px;
@@ -344,7 +365,80 @@ p {
         padding: 60px 15px;
     }
 }
-=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======= */
+/* 
 html,
 body {
     height: 100%;
@@ -367,16 +461,13 @@ body {
 
 .main {
     flex: 1 1 auto;
-}
+} */
 
-[class*="__content"] {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 15px;
-}
+
 
 /* ######################################################################## */
 /* header ################################################################# */
+/* 
 .header {
     position: fixed;
     top: 0;
@@ -457,10 +548,11 @@ body {
     background: #ffffff;
     margin: 0 15px;
     padding: 0 1px;
-}
+} */
 
 /* burger ##################################### */
 
+/* 
 .header__burger-btn {
     width: 48px;
     height: 48px;
@@ -491,9 +583,6 @@ body {
 
 .header.open .header__burger-btn span {
     background-color: #ffffff;
-}
-
-.header.open .header__burger-btn {
 }
 
 .header.open .header__burger-btn span:nth-child(1) {
@@ -543,12 +632,13 @@ body {
     .header.open .nav {
         transform: translateX(100%);
     }
-}
+}  */
 
 /* ###################################################################### */
 /* title ################################################################ */
+/* 
 .title {
-    background-image: url(picture/image1.png);
+    background-image: url('./picture/main.png');
 }
 
 .title .here {
@@ -569,16 +659,17 @@ body {
     color: #007765;
 }
 
-p {
+.text p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     color: #000000;
-}
+} */
 
 /* ###################################################################### */
 /* mean and citate ###################################################### */
+/* 
 .mean__content {
     display: flex;
     justify-content: center;
@@ -587,7 +678,7 @@ p {
 }
 
 .citate {
-    background: url(picture/image2.png);
+    background: url('./picture/citate.png');
 }
 
 .pcitate {
@@ -611,8 +702,17 @@ p {
     height: 115px;
 }
 
+.text p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #000000;
+} */
+
 /* ###################################################################### */
 /* team ################################################################# */
+/* 
 .team {
     justify-content: center;
     text-align: center;
@@ -643,10 +743,11 @@ p {
     line-height: 21px;
     text-align: center;
     color: #000000;
-}
+} */
 
 /* ###################################################################### */
 /* footer ############################################################### */
+/* 
 .footer {
     background: #333333;
     height: 176px;
@@ -667,10 +768,11 @@ p {
     line-height: 21px;
     padding: 50px 0 0 60px;
     text-align: center;
-}
+} */
 
 /* ###################################################################### */
 /* media ############################################################### */
+/* 
 @media (max-width: 992px) {
     .slyleh {
         font-size: 44px;
@@ -687,4 +789,4 @@ p {
         line-height: 46px;
         padding: 60px 15px;
     }
-}
+} */
